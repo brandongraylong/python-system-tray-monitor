@@ -17,9 +17,9 @@ Tested with Python 3.7
 
 ## How to Run (Linux)
 - Create Python 3.7 virtual environment
-- ``source venv/bin/activate``
-- ``pip install -r requirements.txt``
-- ``python pstm.py``
+- ```source venv/bin/activate```
+- ```pip install -r requirements.txt```
+- ```python pstm.py```
 
 
 ## Ideal Setup
