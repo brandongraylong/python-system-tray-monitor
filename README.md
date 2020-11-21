@@ -1,5 +1,4 @@
 # Python System Tray Monitor (PSTM) v1.0.0
-Python System Tray Monitor
 
 
 ## Attributions
