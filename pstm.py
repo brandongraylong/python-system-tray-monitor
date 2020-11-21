@@ -21,10 +21,13 @@ def __get_memory_stats():
 
 
 def __get_storage_stats():
-    curr_storage = psutil.disk_usage('/')
+    curr_root_storage = psutil.disk_usage('/')
+    curr_home_storage = psutil.disk_usage('/home')
     
-    return __get_mem_str_b_to_gb(curr_storage.used) + ' Used / ' + \
-        __get_mem_str_b_to_gb(curr_storage.total) + ' Total Storage'
+    return '/: ' + __get_mem_str_b_to_gb(curr_root_storage.used) + ' Used / ' + \
+        __get_mem_str_b_to_gb(curr_root_storage.total) + ' Total Storage\n' + \
+        '/home: ' + __get_mem_str_b_to_gb(curr_home_storage.used) + ' Used / ' + \
+        __get_mem_str_b_to_gb(curr_home_storage.total) + ' Total Storage'
     
 
 def __get_network_stats():
@@ -100,7 +103,10 @@ def run_tray_app():
 
 
 def main():
-    run_tray_app()    
+    try:
+        run_tray_app()
+    except KeyboardInterrupt:
+        exit(0)  
 
 
 if __name__ == "__main__":
