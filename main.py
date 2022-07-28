@@ -1,8 +1,12 @@
+import os
+
 import psutil, threading, time
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import *
 
-from constants import LOGO_PATH
+ROOT_DIR_PATH = os.path.join(os.getcwd())
+ASSETS_DIR_PATH = os.path.join(ROOT_DIR_PATH, 'assets')
+LOGO_PATH = os.path.join(ASSETS_DIR_PATH, 'logo.png')
 
 
 def __get_cpu_stats():
